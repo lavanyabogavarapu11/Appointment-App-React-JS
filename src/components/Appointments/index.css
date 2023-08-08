@@ -1,0 +1,123 @@
+/* Write your CSS here */
+.app-container {
+  background-image: linear-gradient(to bottom, #fbc7d4, #9796f0);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.appointment-bg-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.heading {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+
+.appointment-container {
+  display: flex;
+  flex-direction: row;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.title-input {
+  border: 1px solid #171f46;
+  max-width: 200px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  min-width: 340px;
+  width: 100%;
+}
+
+.date-input {
+  border: 1px solid #171f46;
+  max-width: 200px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  min-width: 340px;
+  width: 100%;
+}
+.title {
+  color: #b5b7c4;
+  font-family: 'Roboto';
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.label {
+  color: #b5b7c4;
+  font-family: 'Roboto';
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.app-image {
+  margin-left: 100px;
+  width: 290px;
+  height: 250px;
+}
+
+.add-button {
+  background-color: #8b5cf6;
+  border-radius: 20px;
+  width: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.separator {
+  border: 2px solid #b5b7c4;
+  width: 100%;
+}
+
+.sub-heading {
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+.starred {
+  border: 1px solid #9897f0;
+  color: #9897f0;
+  font-family: 'Roboto';
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  width: 80px;
+  height: 30px;
+  background-color: transparent;
+}
+.appointment-result-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.appointments-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
