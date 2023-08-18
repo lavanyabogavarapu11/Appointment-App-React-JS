@@ -85,64 +85,66 @@ class Appointments extends Component {
     return (
       <div className="app-container">
         <div className="appointment-bg-container">
-          <div className="appointment-container">
-            <form className="input-container" onSubmit={this.onAddAppointment}>
-              <h1 className="heading">Add Appointment</h1>
-              <label className="label" htmlFor="title">
-                TITLE
-              </label>
-              <input
-                type="text"
-                id="title"
-                className="title-input"
-                value={titleInput}
-                placeholder="Title"
-                onChange={this.onChangeTitleInput}
-              />
+          <div className="appointments-container">
+            <div className="add-appointment-container">
+              <form className="form" onSubmit={this.onAddAppointment}>
+                <h1 className="heading">Add Appointment</h1>
+                <label className="label" htmlFor="title">
+                  TITLE
+                </label>
+                <input
+                  type="text"
+                  id="title"
+                  className="input"
+                  value={titleInput}
+                  placeholder="Title"
+                  onChange={this.onChangeTitleInput}
+                />
 
-              <label className="label" htmlFor="date">
-                DATE
-              </label>
-              <input
-                type="date"
-                placeholder="dd/mm/yyyy"
-                className="date-input"
-                value={dateInput}
-                id="date"
-                onChange={this.onChangeDateInput}
+                <label className="label" htmlFor="date">
+                  DATE
+                </label>
+                <input
+                  type="date"
+                  placeholder="dd/mm/yyyy"
+                  className="input"
+                  value={dateInput}
+                  id="date"
+                  onChange={this.onChangeDateInput}
+                />
+                <button className="add-button" type="submit">
+                  Add
+                </button>
+              </form>
+
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
+                alt="appointments"
+                className="app-image"
               />
-              <button className="add-button" type="submit">
-                Add
+            </div>
+            <hr className="separator" />
+            <div className="appointment-result-container">
+              <h1 className="sub-heading">Appointments</h1>
+              <button
+                className={`filter-style ${filterClassName}`}
+                type="button"
+                onClick={this.onFilter}
+              >
+                Starred
               </button>
-            </form>
+            </div>
 
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
-              alt="appointments"
-              className="app-image"
-            />
+            <ul className="appointments-list">
+              {filteredAppointmentsList.map(eachAppointment => (
+                <AppointmentItem
+                  key={eachAppointment.id}
+                  appointmentDetails={eachAppointment}
+                  toggleIsStarred={this.toggleIsStarred}
+                />
+              ))}
+            </ul>
           </div>
-          <hr className="separator" />
-          <div className="appointment-result-container">
-            <h1 className="sub-heading">Appointments</h1>
-            <button
-              className={`starred ${filterClassName}`}
-              type="button"
-              onClick={this.onFilter}
-            >
-              Starred
-            </button>
-          </div>
-
-          <ul className="appointments-list">
-            {filteredAppointmentsList.map(eachAppointment => (
-              <AppointmentItem
-                key={eachAppointment.id}
-                appointmentDetails={eachAppointment}
-                toggleIsStarred={this.toggleIsStarred}
-              />
-            ))}
-          </ul>
         </div>
       </div>
     )

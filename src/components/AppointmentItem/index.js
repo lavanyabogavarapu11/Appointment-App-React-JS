@@ -5,13 +5,13 @@ const AppointmentItem = props => {
   const {appointmentDetails, toggleIsStarred} = props
   const {id, title, date, isStared} = appointmentDetails
 
-  const onClickStar = () => {
-    toggleIsStarred(id)
-  }
-
   const isStarredImageUrl = isStared
     ? 'https://assets.ccbp.in/frontend/react-js/appointments-app/filled-star-img.png'
     : 'https://assets.ccbp.in/frontend/react-js/appointments-app/star-img.png'
+
+  const onClickStar = () => {
+    toggleIsStarred(id)
+  }
 
   return (
     <li className="appointment-item">
@@ -19,12 +19,12 @@ const AppointmentItem = props => {
         <p className="title-text">{title}</p>
 
         <button
-          className="star-button"
           type="button"
-          testid="star"
+          data-testid="star"
+          className="star-button"
           onClick={onClickStar}
         >
-          <img src={isStarredImageUrl} alt="star" />
+          <img src={isStarredImageUrl} alt="star" className="star" />
         </button>
       </div>
       <p className="date-text">Date: {date}</p>
